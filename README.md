@@ -17,7 +17,7 @@ yfinanceライブラリを用いて各種金融商品の価格推移データを
 **1. リポジトリをクローンして移動**
 
 ```bash
-git clone [https://github.com/miuraDS/financial_analytics.git](https://github.com/miuraDS/financial_analytics.git)
+git clone https://github.com/miuraDS/financial_analytics.git
 cd financial_analytics
 ````
 
@@ -42,7 +42,7 @@ source .venv/bin/activate
 `pyproject.toml` と `uv.lock` を基に、プロジェクトと全く同じバージョンのライブラリをインストールします。
 
 ```bash
-uv pip sync
+uv.exe pip sync pyproject.tomlc
 ```
 
 -----
