@@ -4,6 +4,7 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+    "remoteUser": "root",
 	// VS Codeのカスタマイズ設定
 	"customizations": {
 		"vscode": {
@@ -17,5 +18,5 @@
 	},
 	// コンテナが作成された後に一度だけ実行されるコマンド
 	// ここでライブラリのインストールを自動化する
-	"postCreateCommand": "uv pip sync pyproject.toml"
+	"postCreateCommand": "uv pip sync --system pyproject.toml"
 }
