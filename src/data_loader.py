@@ -27,6 +27,8 @@ def update_and_load_asset_data(
         dict: アセット名をキー、DataFrameを値とするデータの辞書。
     """
     data_dict = {}
+    # フォルダが存在しない場合にのみ作成（存在する場合は何もしない）
+    data_folder.mkdir(parents=True, exist_ok=True)
     for name, info in assets.items():
         # 保存ファイルパスを生成
         start_date_str = info['start'].replace('-', '')
