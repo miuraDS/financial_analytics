@@ -2,6 +2,7 @@
 name = "financial_analytics"
 version = "0.0.0"
 description = "My project description"
+requires-python = ">=3.11"
 dependencies = [
     "asttokens==3.0.0",
     "beautifulsoup4==4.13.5",
@@ -61,5 +62,3 @@ dependencies = [
     "yfinance==0.2.65",
     "pyarrow==21.0.0"
 ]
-[tool.uv]
-python-version = "3.12"
