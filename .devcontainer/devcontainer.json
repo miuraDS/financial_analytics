@@ -1,0 +1,21 @@
+{
+	"name": "Financial Analytics Environment",
+	// 上で作成したDockerfileを使用するよう指定
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	// VS Codeのカスタマイズ設定
+	"customizations": {
+		"vscode": {
+			// コンテナ内で自動的にインストール・有効化する拡張機能
+			"extensions": [
+				"ms-python.python", // Python言語サポート
+				"ms-toolsai.jupyter", // Jupyter Notebookサポート
+				"charliermarsh.ruff" // Pythonリンター・フォーマッター
+			]
+		}
+	},
+	// コンテナが作成された後に一度だけ実行されるコマンド
+	// ここでライブラリのインストールを自動化する
+	"postCreateCommand": "uv pip sync pyproject.toml"
+}

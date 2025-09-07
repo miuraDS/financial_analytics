@@ -12,38 +12,29 @@ yfinanceライブラリを用いて各種金融商品の価格推移データを
 
 ---
 
-## 🚀 セットアップ方法
+## 🚀 必要なもの
 
-**1. リポジトリをクローンして移動**
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [VS Code Dev Containers 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/) （**必ず起動しておいてください**）
 
-```bash
-git clone https://github.com/miuraDS/financial_analytics.git
-cd financial_analytics
-````
+---
 
-**2. 仮想環境の作成**
-`uv` を使って、プロジェクト用の仮想環境を作成します。
+## ✨ セットアップと使い方
 
-```bash
-uv venv
-```
+1. **リポジトリをクローンする**
 
-**3. 仮想環境の有効化**
+    ```bash
+    git clone https://github.com/miuraDS/financial_analytics.git
+    ```
 
-```bash
-# macOS / Linux
-source .venv/bin/activate
+2. **VS Codeで開く**
+    クローンしたフォルダをVS Codeで開きます。
+3. **コンテナで再度開く**
+    VS Codeが`.devcontainer`フォルダを検知し、右下に表示される「**Reopen in Container**」ボタンをクリックします。
 
-# Windows (Command Prompt)
-.venv\Scripts\activate
-```
-
-**4. ライブラリのインストール**
-`pyproject.toml` と `uv.lock` を基に、プロジェクトと全く同じバージョンのライブラリをインストールします。
-
-```bash
-uv.exe pip sync pyproject.tomlc
-```
+4. **分析を開始する**
+    初回は環境構築に数分かかります。完了後、`notebooks/financial_analytics.ipynb`を開けば、すぐに分析を開始できます。ライブラリのインストールなどは一切不要です。
 
 -----
 
@@ -62,15 +53,16 @@ uv.exe pip sync pyproject.tomlc
 
 ```plaintext
 financial_analytics/
-├── .venv/               # 仮想環境 (uvが作成)
-├── data/                # 分析用データ（.gitignoreで管理対象外）
-├── notebooks/           # Jupyter Notebookを格納
-│   └── financial_analytics.ipynb
-├── src/                 # 再利用するPythonソースコード
-│   └── data_loader.py
-├── images/              # README.mdに挿入する画像
-├── .gitignore           # Gitの追跡から除外するファイルリスト
-├── pyproject.toml       # プロジェクトの依存関係リスト
-├── uv.lock              # 依存関係の正確なバージョンロックファイル
-└── README.md            # このファイル
+├── .devcontainer/         # Dev Container設定
+│   ├── devcontainer.json  # VS Codeへの指示書
+│   └── Dockerfile         # 環境の設計図
+├── .venv/                 # 仮想環境 (ローカル用)
+├── data/                  # 分析用データ
+├── notebooks/             # Jupyter Notebook
+├── src/                   # Pythonソースコード
+├── images/                # README用画像
+├── .gitignore             # Git無視リスト
+├── pyproject.toml         # 依存関係リスト
+├── uv.lock                # 依存関係ロックファイル
+└── README.md              # このファイル
 ```
